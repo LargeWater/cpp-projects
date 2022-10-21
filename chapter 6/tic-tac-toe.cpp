@@ -5,11 +5,11 @@
 
 using namespace std;
 
-const char X = "X";
-const char O = "O";
-const char EMPTY = " ";
-const char TIE = "T";
-const char NO_ONE = "N";
+char X = "X";
+char O = "O";
+char EMPTY = " ";
+char TIE = "T";
+char NO_ONE = "N";
 
 void instructions();
 char askYesNo(string question);
@@ -90,8 +90,7 @@ int askNumber(string question, int high, int low)
   int number;
   do
   {
-    cout << question << " (" << low << " – " << high << "):
-  ";
+    cout << question << " (" << low << " - " << high << "): ";
     cin >> number;
   } while (number > high || number < low);
 
@@ -100,8 +99,8 @@ int askNumber(string question, int high, int low)
 
 char humanPiece()
 {
-  char go_first = askYesNo("Do you require the first move?");
-  if (go_first == "y")
+  const char go_first = askYesNo("Do you require the first move?");
+  if (go_first == 'y')
   {
     cout << "\nThen take the first move. You will need it.\n";
     return X;
